@@ -1,10 +1,11 @@
 import axios from 'axios';
+import { Item } from './def';
 
 /**
  * For simplicity, I'm using a basic API library instead of RTK-Q. For an example of RTK-Q, see 
  * @param query 
  */
-export async function searchApi(query: string): Promise<unknown[]> {
+export async function searchApi(query: string): Promise<Item[]> {
 	return await axios.post(
 		'https://rocketapi-for-developers.p.rapidapi.com/instagram/user/search HTTP/1.1',
 		{

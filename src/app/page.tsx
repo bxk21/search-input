@@ -3,10 +3,12 @@
 import { searchApi } from "@/lib/searchApi";
 import styles from "./page.module.css";
 import { ClipboardEvent, ClipboardEventHandler, CompositionEvent, FormEvent, FormEventHandler, SyntheticEvent, useEffect, useState } from "react";
+import CardItem from "@/components/CardItem";
+import { Item } from "@/lib/def";
 
 export default function Search() {
 	const [searchTerm, setSearchTerm] = useState<string>();
-	const [searchResults, setSearchResults] = useState<unknown[]>();
+	const [searchResults, setSearchResults] = useState<Item[]>();
 
 	const submitSearch = (formData: FormData) => {
 		setSearchTerm(formData.get('searchTerm') as string)
@@ -34,6 +36,7 @@ export default function Search() {
 	};
 
 	/**
+	 * Prevents pasting into the input. Fulfills requirement 1C
 	 * This works on Chromium, but doesn't work on Firefox for me, but that's probably because I disabled that in my personal browser.
 	 */
 	const preventPaste: ClipboardEventHandler<HTMLInputElement> = (event: ClipboardEvent<HTMLInputElement>) => {
@@ -59,10 +62,8 @@ export default function Search() {
 						Search
 					</button>
 				</form>
-				{searchResults && <ol>
-					{searchResults.map((item, i) => <li key={i}>
-						{JSON.stringify(item)}
-					</li>)}
+				{searchResults && <ol className={styles.grid}>
+					{searchResults.map((item, i) => <CardItem item={item} key={i}/>)}
 				</ol>}
 			</main>
 		</div>
