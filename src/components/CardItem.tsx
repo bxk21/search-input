@@ -3,24 +3,23 @@ import Image from "next/image";
 import { Key } from "react";
 import styles from "../app/page.module.css";
 
-export default function CardItem(props: { item: Item; key: Key; }) {
+export default function CardItem(props: { item: Item }) {
 	const {
-		item,
-		key
+		item
 	} = props;
-	return <li key={key} className={styles.card}>
-		<col>
-			<Image src={item.profile_pic_url} alt=""/>
-		</col>
-		<col>
-			<>
+	return <li className={styles.card}>
+		<div>
+			<Image src={item.profile_pic_url} alt="" width={64} height={64}/>
+		</div>
+		<div>
+			<div className={styles.vertical}>
 				UserName:
 				{item.username}
-			</>
-			<>
+			</div>
+			<div className={styles.vertical}>
 				Name:
 				{item.fullname}
-			</>
-		</col>
+			</div>
+		</div>
 	</li>;
 }

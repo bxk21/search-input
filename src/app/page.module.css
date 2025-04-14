@@ -59,13 +59,18 @@
 	}
 }
 
-grid {
+.grid {
 	display: flex;
 	flex-wrap: wrap;
 }
 
-card {
+.card {
 	display: flex;
-	width: 8em;
-	height: 8em;
+	width: 24em;
+	height: 24em;
+}
+
+.vertical {
+	display: flex;
+	flex-direction: column;
 }
