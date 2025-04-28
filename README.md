@@ -8,11 +8,11 @@ This project is built with NextJS. It uses the `next`, `react`, and `axios` libr
 
 ## Implementation Notes
 
-The supplied X-Rapidapi-Key is invalid. Perhaps it's old, or perhaps someone else leaked it.
+* I would normally put the key into an `.env` file, but I'm afraid it'd be too much hassle for the end user to test.
 
-Instead, I spoofed example data to display.
+* My RocketAPI account is the basic free one, so only 100 API calls are allowed. If so, please use the exampleResponse data in the searchAPI.ts file.
 
-I would normally put the key into an `.env` file, but I'm afraid it'd be too much hassle to test.
+* Check out my `rtkq` project for extremely in-depth API calls and implementations.
 
 ## To Run
 
