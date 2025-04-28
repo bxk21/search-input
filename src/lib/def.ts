@@ -1,5 +1,31 @@
-export interface Item {
-	username: string,
-	fullname: string,
-	profile_pic_url: string
-}
+export type Item = Partial<{
+	"account_badges": any[],
+	"fbid_v2": string,
+	"friendship_status": {
+		"following": boolean,
+		"incoming_request": boolean,
+		"is_bestie": boolean,
+		"is_feed_favorite": boolean,
+		"is_private": boolean,
+		"is_restricted": boolean,
+		"outgoing_request": boolean
+	},
+	"full_name": string,
+	"has_anonymous_profile_picture": boolean,
+	"has_opt_eligible_shop": boolean,
+	"id": string,
+	"is_private": boolean,
+	"is_verified": boolean,
+	"is_verified_search_boosted": boolean,
+	"latest_reel_media": number,
+	"pk": number,
+	"pk_id": string,
+	"profile_pic_id": string,
+	"profile_pic_url": string,
+	"should_show_category": boolean,
+	"show_ig_app_switcher_badge": boolean,
+	"show_text_post_app_badge": boolean,
+	"strong_id__": string,
+	"third_party_downloads_enabled": number,
+	"username": string
+}>

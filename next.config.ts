@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "bxk21.vercel.app",
+        hostname: "scontent-vie1-1.cdninstagram.com",
       },
     ],
   }

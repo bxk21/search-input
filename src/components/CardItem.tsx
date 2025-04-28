@@ -1,6 +1,5 @@
 import { Item } from "@/lib/def";
 import Image from "next/image";
-import { Key } from "react";
 import styles from "../app/page.module.css";
 
 export default function CardItem(props: { item: Item }) {
@@ -9,7 +8,7 @@ export default function CardItem(props: { item: Item }) {
 	} = props;
 	return <li className={styles.card}>
 		<div>
-			<Image src={item.profile_pic_url} alt="" width={64} height={64}/>
+			<Image src={item.profile_pic_url!} alt="" width={64} height={64}/>
 		</div>
 		<div>
 			<div className={styles.vertical}>
@@ -18,7 +17,7 @@ export default function CardItem(props: { item: Item }) {
 			</div>
 			<div className={styles.vertical}>
 				Name:
-				{item.fullname}
+				{item.full_name}
 			</div>
 		</div>
 	</li>;
